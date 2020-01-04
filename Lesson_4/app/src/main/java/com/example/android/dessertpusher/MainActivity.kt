@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
 
     private var revenue = 0
     private var dessertsSold = 0
+    private lateinit var desserttimer:DessertTimer
 
     // Contains all the views
     private lateinit var binding: ActivityMainBinding
@@ -66,7 +67,7 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        desserttimer = DessertTimer()
         Log.i("MainActivity", "onCreate called")
 
         // Use Data Binding to get reference to the views
@@ -154,30 +155,32 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
     override fun onStart() {
         super.onStart()
         Timber.i("onStart called")
+        desserttimer.startTimer()
     }
 
     override fun onResume() {
         super.onResume()
-        Timber.i("onResume here")
+        Timber.i("onResume called")
     }
 
     override fun onPause() {
         super.onPause()
-        Timber.i("onPause here")
+        Timber.i("onPause called")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Timber.i("onDestroy here")
+        Timber.i("onDestroy called")
     }
 
     override fun onRestart() {
         super.onRestart()
-        Timber.i("onRestart here")
+        Timber.i("onRestart called")
     }
 
     override fun onStop() {
         super.onStop()
-        Timber.i("onStop here")
+        Timber.i("onStop called")
+        desserttimer.stopTimer()
     }
 }
