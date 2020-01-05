@@ -61,6 +61,7 @@ class SleepQualityFragment : Fragment() {
                 sleepQualityViewModel.doneNavigating()
             }
         })
+
         binding.sleepQualityViewModel = sleepQualityViewModel
         return binding.root
     }
