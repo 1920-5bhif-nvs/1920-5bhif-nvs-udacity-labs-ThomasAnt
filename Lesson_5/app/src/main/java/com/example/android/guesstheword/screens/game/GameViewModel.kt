@@ -16,9 +16,10 @@ class GameViewModel: ViewModel(){
 
     init {
         resetList()
-        nextWord()
+
         score.value = 0
         word.value = ""
+        nextWord()
     }
 
     override fun onCleared() {

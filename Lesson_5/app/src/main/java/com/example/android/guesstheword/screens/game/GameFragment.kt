@@ -48,7 +48,7 @@ class GameFragment : Fragment() {
                 container,
                 false
         )
-        Log.i("GameFragment","called ViewModelProviders.of")
+        Log.i("GameFragment","called ViewModelProviders.of")  
         viewModel = ViewModelProviders.of(this).get(GameViewModel::class.java)
 
         binding.correctButton.setOnClickListener {
