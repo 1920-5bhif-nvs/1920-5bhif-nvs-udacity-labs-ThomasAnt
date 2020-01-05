@@ -60,6 +60,12 @@ class GameFragment : Fragment() {
 
         viewModel.score.observe(this,Observer{ newScore -> binding.scoreText.text = newScore.toString()})
         viewModel.word.observe(this, Observer { newWord -> binding.wordText.text = newWord })
+        viewModel.eventGameFinished.observe(this, Observer { hasFinished ->
+            if(hasFinished){
+                gameFinished()
+                viewModel.onGameFinishedComplete()
+            }
+        })
         return binding.root
 
     }
